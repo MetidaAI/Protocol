@@ -2,7 +2,7 @@
 #define METIDAPROTOCOL_DATAPACKETSERVER_H
 
 #include "iostream"
-#include "tinyNet/packet.h"
+#include "../../tinyNet/packet.h"
 #include "../packetType.h"
 #include "../base64.h"
 #include <fstream>
@@ -12,7 +12,7 @@ class dataPacketServer : public packet{
 public:
     dataPacketServer(nlohmann::json &data);
     void serialize() override;
-    void deserialize(std::string &data) override;
+    void deserialize(nlohmann::json& data) override;
     virtual ~dataPacketServer() {};
 };
 

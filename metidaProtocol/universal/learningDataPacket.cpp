@@ -7,8 +7,8 @@ void learningDataPacket::serialize() {
     this->data["data"] = "accepted";
 }
 
-void learningDataPacket::deserialize(std::string &data) {
-    this->data = nlohmann::json::parse(data);
+void learningDataPacket::deserialize(nlohmann::json& data) {
+    this->data = data;
     logger::info(std::string(this->data["data"].dump()));
     std::ofstream f("1652944890.jpg", std::ios::app);
     std::string d;

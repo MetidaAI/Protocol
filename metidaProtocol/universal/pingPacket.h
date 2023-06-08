@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include "logger.h"
+#include "../../tinyNet/universalPacket.h"
 #include "../packetType.h"
 
 class pingPacket : public universalPacket{
 public:
     pingPacket();
-    void deserialize(std::string& data) override;
+    void deserialize(nlohmann::json& data) override;
     void serialize() override;
     virtual ~pingPacket() {};
 };

@@ -2,9 +2,9 @@
 #define PACKETFACTORY_H
 
 #include <iostream>
-#include "tinyNet/packet.h"
+#include "../tinyNet/packet.h"
 #include "packetType.h"
-#include "tinyNet/abstractPacketFactory.h"
+#include "../tinyNet/abstractPacketFactory.h"
 
 //packets
 #include "universal/handshakePacket.h"

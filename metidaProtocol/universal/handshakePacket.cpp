@@ -6,8 +6,8 @@ void handshakePacket::serialize() {
     this->data["data"] = answer ? strAnswer : "connect";
 }
 
-void handshakePacket::deserialize(std::string& data) {
-    this->data = nlohmann::json::parse(data);
+void handshakePacket::deserialize(nlohmann::json& data) {
+    this->data = data;
     if (this->data["data"].is_string() && strstr(std::string(this->data["data"]).c_str(), "connect")) {
         answer = true;
         strAnswer = "connected";

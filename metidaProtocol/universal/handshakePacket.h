@@ -2,7 +2,7 @@
 #define HANDSHAKEPACKET_H
 
 #include <iostream>
-#include "tinyNet/packet.h"
+#include "../../tinyNet/packet.h"
 #include "logger.h"
 #include "../packetType.h"
 
@@ -12,7 +12,7 @@ private:
     bool answer;
 public:
     handshakePacket();
-    void deserialize(std::string& data) override;
+    void deserialize(nlohmann::json& data) override;
     void serialize() override;
     virtual ~handshakePacket() {};
 };

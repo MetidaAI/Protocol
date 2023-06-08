@@ -9,8 +9,8 @@ void pingPacket::serialize() {
     universalPacket::serialize();
 }
 
-void pingPacket::deserialize(std::string& data) {
-    this->data = nlohmann::json::parse(data);
+void pingPacket::deserialize(nlohmann::json& data) {
+    this->data = data;
     if (this->data["data"].is_string()) {
         logger::info(std::string(" recieved " + std::string(this->data["data"])));
         if(!strcmp(std::string(this->data["data"]).c_str(), std::string("ping").c_str())) {
